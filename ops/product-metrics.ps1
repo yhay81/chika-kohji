@@ -2,7 +2,7 @@
 param([switch]$Local)
 $ErrorActionPreference = "Stop"
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
-$Sql = Get-Content -Raw -LiteralPath (Join-Path $RepoRoot "ops/product-metrics.sql")
+$Sql = ((Get-Content -Raw -LiteralPath (Join-Path $RepoRoot "ops/product-metrics.sql")) -replace "\s+", " ").Trim()
 $Arguments = @("wrangler", "d1", "execute", "chika-kohji", "--command", $Sql, "--json")
 if ($Local) { $Arguments += "--local" } else { $Arguments += "--remote" }
 $Raw = & npx @Arguments
