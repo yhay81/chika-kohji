@@ -1,0 +1,10 @@
+{
+  "name": "地価公示くらべ",
+  "short_name": "地価公示",
+  "description": "2026年地価公示を住所・駅・用途から探して比較する",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f1e7",
+  "theme_color": "#153f38",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
